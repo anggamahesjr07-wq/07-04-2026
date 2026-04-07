@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grid Box</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+ 
+    body {
+      background: #ffffff;
+      min-height: 100vh;
+      padding: 40px 24px;
+    }
+ 
+    /* ── Grid Container ── */
+    .grid {
+      display: grid;
+      gap: 20px;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+ 
+      /* Mobile: 1 column */
+      grid-template-columns: 1fr;
+    }
+ 
+    /* Tablet: 3 columns × 3 rows */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, auto);
+      }
+    }
+ 
+    /* Desktop: 4 columns */
+    @media (min-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+ 
+    /* ── Box ── */
+    .box {
+      height: 160px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+ 
+    /* Box Colors */
+    .box:nth-child(1) { background: #c8ff57; }
+    .box:nth-child(2) { background: #57d4ff; }
+    .box:nth-child(3) { background: #ff6b6b; }
+    .box:nth-child(4) { background: #ffcc00; }
+    .box:nth-child(5) { background: #b57bff; }
+    .box:nth-child(6) { background: #ff9f57; }
+    .box:nth-child(7) { background: #57ffca; }
+    .box:nth-child(8) { background: #ff57c8; }
+    .box:nth-child(9) { background: #57a9ff; }
+  </style>
+</head>
+<body>
+ 
+  <main class="grid">
+    <div class="box">Box</div>
+    <div class="box">Box</div>
+    <div class="box">Box</div>
+    <div class="box">Box</div>
+    <div class="box">Box</div>
+    <div class="box">Box</div>
+    <div class="box">Box</div>
+    <div class="box">Box</div>
+    <div class="box">Box</div>
+  </main>
+ 
+</body>
+</html>
